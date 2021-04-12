@@ -1,3 +1,4 @@
+test
 ---
 page_type: sample
 languages:
