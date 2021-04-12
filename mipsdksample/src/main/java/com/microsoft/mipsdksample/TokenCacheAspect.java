@@ -54,7 +54,7 @@ public class TokenCacheAspect implements ITokenCacheAccessAspect {
 
     private static String readDataFromFile(String resource) {
         try {
-            URL path = TokenCacheAspect.class.getResource(resource);
+            URL path = TokenCacheAspect.class.getClassLoader().getResource(resource);
             return new String(
                     Files.readAllBytes(
                             Paths.get(path.toURI())));

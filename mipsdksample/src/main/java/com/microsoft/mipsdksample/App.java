@@ -39,36 +39,43 @@ public class App
 {
     public static void main( String[] args ) throws InterruptedException, ExecutionException, IOException
     {
-        InputStreamReader input = new InputStreamReader(System.in);         
+        InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(input);
-        
+
         ApplicationInfo appInfo = new  ApplicationInfo();
         FileOptions options = new FileOptions();
 
-        appInfo.setApplicationId("YOUR CLIENT ID");
-        appInfo.setApplicationName("MIP SDK Java Sample");
+        appInfo.setApplicationId("4639fb39-48be-429c-8f59-4132b72a83b6");
+        appInfo.setApplicationName("MIP SDK Java Sample - Softnet");
         appInfo.setApplicationVersion("1.8.97");
 
-        System.out.print("Enter a username: ");
-        String userName = reader.readLine();
+        // System.out.print("Enter a username: ");
+        // String userName = reader.readLine();
+        String userName = "gdhong@softnet.co.kr";
 
         Action action = new Action(appInfo, userName);
-        
+
         action.ListLabels();
 
-        System.out.print("Enter a label Id: ");
-        options.LabelId = reader.readLine();
+        // 입력 받을수 있는 소스
+//        System.out.print("Enter a label Id: ");
+//        options.LabelId = reader.readLine();
+//
+//        System.out.print("Enter an input file full path: ");
+//        options.InputFilePath = reader.readLine();
+//
+//        System.out.print("Enter an output file full path: ");
+//        options.OutputFilePath = reader.readLine();
+//
+//        System.out.println("Applying label to file...");
 
-        System.out.print("Enter an input file full path: ");
-        options.InputFilePath = reader.readLine();
 
-        System.out.print("Enter an output file full path: ");
-        options.OutputFilePath = reader.readLine();
+        options.LabelId = "e007e652-54ac-4093-8570-08df7b9b5f2b";
+        options.InputFilePath = "c:\\test.xlsx";
+        options.OutputFilePath = "c:\\test1.xlsx";
 
-        System.out.println("Applying label to file...");
-        
         options.AssignmentMethod = AssignmentMethod.PRIVILEGED;
-        options.DataState = DataState.REST;        
+        options.DataState = DataState.REST;
         options.IsAuditDiscoveryEnabled = true;
 
         action.SetLabel(options);
@@ -85,5 +92,5 @@ public class App
 
         System.out.println("Press enter to quit.");
         reader.readLine();
-    } 
+    }
 }

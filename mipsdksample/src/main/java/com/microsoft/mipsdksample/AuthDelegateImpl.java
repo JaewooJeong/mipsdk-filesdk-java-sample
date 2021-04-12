@@ -57,7 +57,7 @@ public class AuthDelegateImpl implements IAuthDelegate {
             SCOPE = Collections.singleton(resource + ".default");        
         }
         else {
-            SCOPE = Collections.singleton(resource + "/.default");        
+            SCOPE = Collections.singleton(resource + "/.default");
         }
 
         AUTHORITY = authority;
